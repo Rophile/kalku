@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff5f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .auth-container {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #e891a5;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    padding: 15x 25px;  
+  }
+
+  .logo {
+    width: 300px;   /* Ubah sesuai ukuran yang diinginkan */
+    height: auto;   /* Menjaga rasio aspek */
+    display: block;
+    margin: 0 auto; /* Center logo secara horizontal */
+  }
+  
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input, select {
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.2s;
+    font-size: 14px;
+  }
+  
+  input:focus, select:focus {
+    border-color: #e891a5;
+  }
+  
+  button {
+    padding: 12px;
+    background-color: #e891a5;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 15px;
+  }
+  
+  button:hover {
+    background-color: #d4738b;
+  }
+  
+  p {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  a {
+    color: #e891a5;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 600px) {
+    .auth-container {
+      padding: 25px 20px;
+      border-radius: 15px;
+    }
+  
+    input, select {
+      padding: 10px;
+      font-size: 13px;
+    }
+  
+    button {
+      padding: 10px;
+      font-size: 14px;
+    }
+  
+    h2 {
+      font-size: 20px;
+    }
+  
+    p {
+      font-size: 13px;
+    }
+  }
+  

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Pengingat Siklus Menstruasi</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="pengingat.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="headertop">
+        <div class="navbar">
+            <div class="logo-container">
+                <img src="logo ruby.png" alt="Logo" class="logo">
+                <span class="website-name">Pengingat Siklus Menstruasi</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main App Content -->
+    <div class="app">
+        <div class="content">
+            <div class="countdown-title">HAID DIMULAI DALAM</div>
+            <div class="outer-ring">
+                <div class="countdown-circle">
+                    <div class="circle-inner">5 Hari Lagi</div>
+                </div>
+            </div>
+
+            <div class="reminder">
+                Perkiraan haid tanggal 5 April 2025
+            </div>
+
+            <div class="pink-rectangle">
+                <h3>Bagaimana Perasaanmu Hari Ini?</h3>
+                <div class="emoji-section">
+                    <div class="emoji-wrapper">
+                        <div class="emoji" onclick="showEmojiDescription('senang')">😊</div>
+                        <div class="emoji-label">Senang</div>
+                    </div>
+                    <div class="emoji-wrapper">
+                        <div class="emoji" onclick="showEmojiDescription('biasa')">😐</div>
+                        <div class="emoji-label">Biasa saja</div>
+                    </div>
+                    <div class="emoji-wrapper">
+                        <div class="emoji" onclick="showEmojiDescription('sedih')">😢</div>
+                        <div class="emoji-label">Sedih</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote-button" onclick="showQuotes()">Baca Quotes Hari Ini</div>
+        </div>
+    </div>
+
+    <!-- Emoji Description Page -->
+    <div id="emoji-description-page" style="display: none;">
+        <div id="senang-desc" class="description-container">
+            Anda sedang merasa senang hari ini! Bahagia, positif, berenergi, suasana hati baik.
+        </div>
+        <div id="biasa-desc" class="description-container">
+            Hari yang biasa saja, tidak merasa terlalu senang atau terlalu sedih. Mood stabil.
+        </div>
+        <div id="sedih-desc" class="description-container">
+            Anda merasa sedih hari ini... mengalami mood yang kurang stabil, Anda perlu waktu untuk menenangkan diri.
+        </div>
+        <div class="back-button" onclick="showMainContent()">⟵ Back</div>
+    </div>
+
+    <!-- Quotes Page -->
+    <div id="quotes-page" style="display: none;">
+        <p id="quote-text" class="quote-box"></p>
+        <div class="back-button" onclick="showQuotes()">Dapatkan Quotes Baru</div>
+    </div>
+
+    <!-- Bottom Navbar -->
+    <nav class="bottom-navbar">
+        <a href="../Kalender/kalender.html" class="nav-item">
+            <i class="fas fa-calendar-alt nav-icon"></i>
+            <span class="nav-text">Kalender</span>
+        </a>
+        <a href="../Pengingat/pengingat.html" class="nav-item active">
+            <i class="fas fa-bell nav-icon"></i>
+            <span class="nav-text">Pengingat</span>
+        </a>
+        <a href="../Kuisioner/kuisioner.html" class="nav-item">
+            <i class="fas fa-clipboard nav-icon"></i>
+            <span class="nav-text">Kuisioner</span>
+        </a>
+        <a href="../Saya/me.html" class="nav-item">
+            <i class="fas fa-user nav-icon"></i>
+            <span class="nav-text">Saya</span>
+        </a>
+    </nav>
+
+    <!-- Script -->
+    <script src="pengingat.js"></script>
+</body>
+</html>

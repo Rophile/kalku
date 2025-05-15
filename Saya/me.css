@@ -1,0 +1,357 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif; /* Menggunakan font Quicksand */
+  -webkit-tap-highlight-color: transparent;
+
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #ebe8db;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 60px;
+}
+.header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #d76c82;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    color: #ebe8db;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    max-width: 100%;
+}
+
+.logo {
+    height: 2rem;
+    width: auto;
+}
+
+.website-name {
+  font-size: clamp(1rem, 4vw, 1.5rem);
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none; /* ← ini penting! */
+  z-index: 10;
+}
+
+.logout-popup {
+  display: none;
+  z-index: 20;
+  position: fixed;
+  /* properti lain */
+}
+
+.logout-popup.active {
+  display: block;
+}
+
+.blur {
+  filter: blur(2px);
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  padding: 5rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+
+}
+
+/* Profile Section */
+.profile {
+  background-color: #f8f6f4;
+  border-radius: 0.5rem;
+  padding: 2rem 1.5rem;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #c94e5c;
+  background-color: white;
+}
+
+.username {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.status {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.edit-btn {
+  background-color: #d57c8a;
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 2.5rem;
+  margin-bottom: 1.5rem;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.edit-btn:hover {
+  background-color: #c06b77;
+}
+
+/* Menu Section */
+
+.menu-box {
+  width: 515px; /* Lebar menu box */
+  background-color:white; /* Warna latar menu */
+  border-radius: 8px; /* Sudut membulat */
+  margin: 0 auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Agar tidak ada elemen yang meluap */
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item.active {
+  background-color: #fce4ec;
+  color: #c94e5c;
+}
+
+.menu-item {
+  display: flex; /* Untuk menyusun ikon dan teks secara horizontal */
+  align-items: center; /* Vertikal padu */
+  padding: 15px; /* Ruang dalam */
+  font-weight: bold;
+  border-bottom: 1px solid #e0e0e0; /* Garis pemisah antar item */
+  cursor: pointer; /* Ubah kursor saat hover */
+  transition: background-color 0.3s; /* Transisi saat hover */
+  text-decoration: none;
+  color: #333;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+
+}
+
+.menu-box {
+  width: 100%;
+  max-width: 515px;
+  margin: 0 auto;
+}
+
+
+.menu-item .arrow {
+  margin-left: auto;
+  color: #888;
+}
+
+.menu-item:hover {
+  background-color: #f0f0f0; /* Warna latar saat hover */
+}
+
+.menu-item i {
+  margin-right: 15px; /* Ruang antara ikon dan teks */
+  color: #d76c82; /* Warna ikon */
+  font-size: 1.2em; /* Ukuran ikon */
+}
+
+.btn {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* Blur ketika popup aktif */
+.blur {
+  filter: blur(4px);
+}
+
+/* Popup Logout */
+.logout-popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #dd6c82;
+  padding: 25px;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.logout-popup.active {
+  transform: translateY(0);
+}
+
+.logout-title {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.divider {
+  height: 2px;
+  background-color: #f6ced8;
+  margin: 10px 0 15px;
+}
+
+.logout-question {
+  color: white;
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.logout-buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  flex: 1;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.cancel {
+  background-color: #fcdde4;
+  color: #7a2f3d;
+}
+
+.confirm {
+  background-color: #8d2c40;
+  color: white;
+}
+
+.bottom-navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #d76c82;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.nav-item {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #ebe8db;
+    transition: all 0.3s ease;
+}
+  
+.nav-item.active {
+  color: #e4a9a9;
+}
+  
+.nav-item:hover {
+  color: #e4a9a9;
+}
+  
+
+.nav-icon {
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  margin-bottom: 0.2rem;
+}
+
+input:disabled {
+    background-color: #f9f9f9;
+    color: #333;
+    border: 1px solid #ddd;
+    cursor: not-allowed;
+}
+
+.bottom-navbar {
+    pointer-events: auto;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .main {
+    padding: 2rem;
+  }
+
+  .profile {
+    padding: 3rem 2rem;
+  }
+
+  .edit-btn {
+    width: 50%;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:focus,
+a:active {
+  outline: none;
+  box-shadow: none;
+  color: inherit;
+  text-decoration: none;
+}
+
+

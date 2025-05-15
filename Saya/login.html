@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login / Sign Up</title>
+  <link rel="stylesheet" href="login.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header">
+    <img src="LOGO RUBBY.png" alt="Logo Ruby" class="logo">
+  </header> 
+
+  <div class="auth-container">
+    <div class="form-box login">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="text" id="loginUsername" placeholder="Username / Email" required />
+        <input type="password" id="loginPassword" placeholder="Kata Sandi" required />
+        <button type="submit">Masuk</button>
+        <p>Belum punya akun? <a href="#" onclick="toggleForm()">Daftar</a></p>
+      </form>
+    </div>
+
+    <div class="form-box signup hidden">
+      <h2>Daftar</h2>
+      <form id="signupForm">
+        <input type="text" id="signupUsername" placeholder="Username" required />
+        <input type="text" id="signupFullname" placeholder="Nama Lengkap" required />
+        <input type="email" id="signupEmail" placeholder="Email" required />
+        <input type="date" id="birthdate" placeholder="Tanggal Lahir" required />
+        <input type="number" id="age" placeholder="Usia" readonly />
+        <input type="password" id="signupPassword" placeholder="Kata Sandi" required />
+        <button type="submit">Daftar</button>
+        <p>Sudah punya akun? <a href="#" onclick="toggleForm()">Masuk</a></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

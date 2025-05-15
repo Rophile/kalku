@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Pengingat Siklus Menstruasi</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="app">
+        <div class="content">
+            <div class="header">
+                <img src="LOGO RUBBY.png" alt="Logo Rubby" class="logo" />
+                <h1 class="title">Pengingat Siklus Menstruasi</h1>
+            </div>
+
+            <div class="countdown-title">HAID DIMULAI DALAM</div>
+
+            <div id="countdown-section" class="countdown-circle">
+                <div class="circle-inner">5 Hari Lagi</div>
+            </div>
+
+            <div class="reminder">
+                Perkiraan haid tanggal 5 April 2025
+            </div>
+
+            <div class="pink-rectangle">
+                <h3>Bagaimana Perasaanmu Hari Ini?</h3>
+                <div class="emoji-section">
+                    <div class="emoji-wrapper">
+                        <div class="emoji" onclick="showEmojiDescription('senang')">😊</div>
+                        <div class="emoji-label">Senang</div>
+                    </div>
+                    <div class="emoji-wrapper">
+                        <div class="emoji" onclick="showEmojiDescription('biasa')">😐</div>
+                        <div class="emoji-label">Biasa saja</div>
+                    </div>
+                    <div class="emoji-wrapper">
+                        <div class="emoji" onclick="showEmojiDescription('sedih')">😢</div>
+                        <div class="emoji-label">Sedih</div>
+                    </div>
+                </div>
+            </div>
+            <div class="quote-button" onclick="showQuotes()">Baca Quotes Hari Ini</div>
+
+
+
+        </div>
+        <nav class="bottom-navbar">
+            <a href="#" class="nav-item active">
+              <i class="fas fa-calendar-alt nav-icon"></i>
+              <span class="nav-text">Kalender</span>
+            </a>
+            <a href="#" class="nav-item">
+              <i class="fas fa-bell nav-icon"></i>
+              <span class="nav-text">Pengingat</span>
+            </a>
+            <a href="#" class="nav-item">
+              <i class="fas fa-clipboard nav-icon"></i>
+              <span class="nav-text">Kuisioner</span>
+            </a>
+            <a href="#" class="nav-item">
+              <i class="fas fa-user nav-icon"></i>
+              <span class="nav-text">Saya</span>
+            </a>
+        </nav>
+    </div>
+
+      <div id="emoji-description-page" style="display:none;">
+        <div class="header">
+            <div class="logo"></div>
+            <h1 class="title">Pengingat Siklus Menstruasi</h1>
+        </div>
+        <div class="content">
+            <div id="senang-desc" class="description-container">
+                Emoji 😊 menunjukkan perasaan senang atau bahagia. Biasanya digunakan untuk menunjukkan kebahagiaan, kegembiraan, atau perasaan positif secara umum.
+            </div>
+
+            <div id="biasa-desc" class="description-container">
+                Emoji 😐 digunakan untuk menggambarkan perasaan biasa atau netral, di mana tidak ada perasaan khusus yang dirasakan, baik senang maupun sedih.
+            </div>
+
+            <div id="sedih-desc" class="description-container">
+                Emoji 😢 menunjukkan perasaan sedih atau kecewa. Biasanya digunakan untuk mengekspresikan kesedihan, kekecewaan, atau perasaan negatif lainnya.
+            </div>
+             <div class="back-button" onclick="showMainContent()">Kembali</div>
+        </div>
+    </div>
+
+    <div id="quotes-page" style="display:none;">
+        <div class="header">
+            <div class="logo"></div>
+            <h1 class="title"> Baca Quotes Hari Ini</h1>
+        </div>
+        <div class="content">
+            <h2 id="quote-title" style="text-align: center; margin-bottom: 20px;"></h2>
+            <p id="quote-text" style="text-align: center; font-size: 1.2em;"></p>
+            <div class="back-button" onclick="showQuotes()">Dapatkan Quotes Baru </div>
+        </div>
+    </div>
+
+    <script>
+        // Menambahkan fungsi aktif/nonaktif pada navbar
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
