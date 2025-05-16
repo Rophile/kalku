@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Profil</title>
+  <link rel="stylesheet" href="editprofil.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <i class="fas fa-arrow-left" onclick="history.back()"></i>
+      <h2>Informasi Pribadi</h2>
+    </header>
+
+    <div class="profile-pic-container">
+      <img id="profile-pic" src="avatar.png" alt="Foto Profil" />
+      <label for="upload-photo" class="edit-icon">
+        <i class="fas fa-camera"></i>
+      </label>
+      <input type="file" id="upload-photo" accept="image/*" style="display: none;" onchange="previewPhoto(event)">
+    </div>
+
+    <form id="editForm">
+      <label>Nama Lengkap</label>
+      <input type="text" name="fullname" placeholder="Ailoysironman" required />
+
+      <label>Email</label>
+      <input type="email" name="email" placeholder="contoh@email.com" required />
+      
+      <label>Username</label>
+      <input type="text" name="username" placeholder="sayakuat" required />
+
+      <label>Tanggal Lahir</label>
+      <input type="date" name="dob" onchange="updateAge()" required />
+
+      <label>Usia</label>
+      <input type="text" name="age" id="age" placeholder="19th" readonly />
+
+      <button type="submit" class="update-btn">Perbarui</button>
+    </form>
+  </div>
+
+  <script src="editprofil.js"></script>
+</body>
+</html>

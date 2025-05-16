@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="pengingat.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Pengingat Haid</title>
+  <link rel="icon" href="logo-rubby.png" type="image/x-icon">
+</head>
+<body>
+  <header class="header">
+    <div class="navbar">
+      <div class="logo-container">
+        <img src="logo-rubby.png" alt="Logo" class="logo">
+        <span class="website-name">Pengingat Menstruasi</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- SCREEN PENGINGAT -->
+  <div id="screenPengingat" class="content">
+    <h1 class="countdown-title">Pengingat Haid</h1>
+    <div class="countdown-circle"><div class="circle-inner" id="countdownText">--</div></div>
+    
+    <!-- Mood Harian -->
+    <div class="mood-section">
+      <h2>Mood Hari Ini</h2>
+      <div id="moodEmojis">
+        <span class="mood-emojis" data-mood="happy">😊</span>
+        <span class="mood-emojis" data-mood="sad">😢</span>
+        <span class="mood-emojis" data-mood="tired">😴</span>
+        <span class="mood-emojis" data-mood="angry">😠</span>
+        <span class="mood-emojis" data-mood="energetic">💪</span>
+      </div>
+      <p id="moodAdvice" class="mood-advice">Pilih mood kamu hari ini~</p>
+    </div>
+
+    <!-- Quotes Trigger -->
+    <div class="quote-button-container">
+      <button onclick="showScreen('quote')" class="go-quotes-btn">Quotes Hari Ini</button>
+    </div>
+  </div>
+
+  <!-- SCREEN QUOTE -->
+  <div id="screenQuote" class="content" style="display:none;">
+    <div class="quote-box">
+      <div class="quote-icon">❝</div>
+      <div id="quoteText" class="quote-text"></div>
+      <div id="quoteAuthor" class="quote-author"></div>
+    </div>
+    <div class="quote-button-container">
+      <button class="go-quotes-btn" onclick="tampilkanQuoteBerurutan()">Quote Berikutnya</button>
+      <button class="go-quotes-btn" onclick="showScreen('pengingat')">Kembali</button>
+    </div>
+  </div>
+
+  <nav class="bottom-navbar">
+    <a href="kalender.html" class="nav-item"><i class="fas fa-calendar-alt nav-icon"></i><span class="nav-text">Kalender</span></a>
+    <a href="pengingat.html" class="nav-item active"><i class="fas fa-bell nav-icon"></i><span class="nav-text">Pengingat</span></a>
+    <a href="kuisioner.html" class="nav-item"><i class="fas fa-clipboard nav-icon"></i><span class="nav-text">Kuisioner</span></a>
+    <a href="me.html" class="nav-item"><i class="fas fa-user nav-icon"></i><span class="nav-text">Saya</span></a>
+  </nav>
+
+  <script src="pengingat.js"></script>
+</body>
+</html>

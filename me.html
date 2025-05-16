@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Saya - Ruby</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap">
+  <link rel="stylesheet" href="me.css">
+  <link rel="icon" href="logo-rubby.png" type="image/x-icon">
+
+</head>
+<body>
+  <header class="header">
+    <div class="navbar">
+      <div class="logo-container">
+        <img src="logo-rubby.png" alt="Logo" class="logo">
+        <span class="website-name">Profil Saya</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="main" id="main-content">
+    <section class="profile">
+      <div class="avatar-wrapper">
+        <img src="avatar.png" alt="Avatar" class="avatar" id="profile-pic">
+      </div>
+
+      <h2 class="username" id="display-username">Username</h2>
+      <p class="status" id="display-fullname">Nama Lengkap</p>
+
+      <a href="editprofil.html" class="edit-btn">Edit Profil</a>
+
+      <div class="menu-box">
+        <a href="faq.html" class="menu-item">
+          <i class="fas fa-question-circle"></i>
+          <span>FAQ</span>
+          <i class="fas fa-chevron-right arrow"></i>
+        </a>
+
+        <a href="feedback.html" class="menu-item">
+          <i class="fas fa-comments"></i>
+          <span>Umpan Balik</span>
+          <i class="fas fa-chevron-right arrow"></i>
+        </a>
+
+        <a href="javascript:void(0)" class="menu-item" onclick="openLogout()">
+          <i class="fas fa-sign-out-alt"></i>
+          <span>Keluar</span>
+          <i class="fas fa-chevron-right arrow"></i>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-navbar">
+    <a href="kalender.html" class="nav-item">
+      <i class="fas fa-calendar-alt nav-icon"></i>
+      <span class="nav-text">Kalender</span>
+    </a>
+    <a href="pengingat.html" class="nav-item">
+      <i class="fas fa-bell nav-icon"></i>
+      <span class="nav-text">Pengingat</span>
+    </a>
+    <a href="kuisioner.html" class="nav-item">
+      <i class="fas fa-clipboard nav-icon"></i>
+      <span class="nav-text">Kuisioner</span>
+    </a>
+    <a href="me.html" class="nav-item active">
+      <i class="fas fa-user nav-icon"></i>
+      <span class="nav-text">Saya</span>
+    </a>
+  </nav>
+
+  <div class="overlay" id="overlay" onclick="closeLogout()"></div>
+
+  <!--Popup Logout-->
+  <div class="logout-popup" id="logoutPopup">
+    <h2 class="logout-title">Keluar</h2>
+    <div class="divider"></div>
+    <p class="logout-question">Anda yakin ingin keluar?</p>
+    <div class="logout-buttons">
+      <button class="btn cancel" onclick="closeLogout()">Kembali</button>
+      <button class="btn confirm" onclick="logout()">Ya, Keluar</button>
+    </div>
+  </div>
+
+  <script>
+    // Aktifkan navbar
+    document.querySelectorAll('.nav-item').forEach(item => {
+      item.addEventListener('click', function () {
+        document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+    // Fungsi popup logout
+    function openLogout() {
+      document.getElementById('logoutPopup').classList.add('active');
+      document.getElementById('main-content').classList.add('blur');
+    }
+    function closeLogout() {
+      document.getElementById('logoutPopup').classList.remove('active');
+      document.getElementById('main-content').classList.remove('blur');
+    }
+    function logout() {
+      sessionStorage.removeItem("user_aktif");
+      sessionStorage.removeItem("profileImage");
+      alert("Berhasil Keluar!");
+      window.location.href = "index.html";
+    }
+
+    // Tampilkan data user dari sessionStorage saat halaman dimuat
+    window.addEventListener("DOMContentLoaded", () => {
+      const userData = sessionStorage.getItem("user_aktif");
+      if (userData) {
+        const user = JSON.parse(userData);
+        document.getElementById("display-username").textContent = user.username || "Username";
+        document.getElementById("display-fullname").textContent = user.fullname || "Nama Lengkap";
+      }
+
+      const savedImage = sessionStorage.getItem("profileImage");
+      if (savedImage) {
+        const profilePic = document.getElementById("profile-pic");
+        if (profilePic) {
+          profilePic.src = savedImage;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

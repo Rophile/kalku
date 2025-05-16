@@ -1,0 +1,354 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #ebe8db;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 60px;
+}
+
+.header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #d76c82;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    color: #ebe8db;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    max-width: 100%;
+}
+
+.logo {
+    height: 2rem;
+    width: auto;
+}
+
+.website-name {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.main-container {
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+.form-container {
+    background-color: #f8f6f4;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    display: none;
+}
+
+.form-container.visible {
+    display: block;
+}
+
+.form-container div {
+    margin-top: 0.8rem;
+}
+
+.form-container h2 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+    font-size: clamp(0.8rem, 3vw, 0.9rem);
+}
+
+input[type="date"],
+input[type="number"] {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    margin-bottom: 0.5rem;
+}
+
+.button {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#action-btn,
+#mark-period-btn {
+    width: 100%;
+    padding: 0.8rem;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#action-btn {
+    background-color: #e4a9a9;
+}
+
+#action-btn:hover {
+    background-color: #d81b60;
+}
+
+#action-btn.edit-mode {
+    background-color: #d81b60;
+}
+
+#action-btn.calculate-mode {
+    background-color: #e4a9a9;
+}
+
+#mark-period-btn {
+    background-color: #ab7b8f;
+}
+
+#mark-period-btn:hover {
+    background-color: #8a5a6e;
+}
+
+.calendar-container {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 0 1rem;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.nav h2 {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    text-align: center;
+    flex: 1;
+    margin: 0 0.5rem;
+}
+
+.month-nav {
+    background-color: #e4a9a9;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-size: clamp(0.7rem, 3vw, 0.9rem);
+    cursor: pointer;
+    white-space: nowrap;
+    min-width: 5rem;
+    transition: background-color 0.3s;
+}
+
+.month-nav:hover {
+    background-color: #d81b60;
+}
+
+.full-text {
+    display: inline;
+}
+
+.short-text {
+    display: none;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1rem;
+}
+
+.calendar {
+    width: 100%;
+    min-width: 300px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.calendar th {
+    background-color: #f3d9e6;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: clamp(0.7rem, 3vw, 0.9rem);
+}
+
+.calendar td {
+    border: 1px solid #ddd;
+    padding: 0.3rem;
+    height: clamp(3rem, 10vw, 5rem);
+    vertical-align: top;
+    position: relative;
+    font-size: clamp(0.7rem, 3vw, 0.9rem);
+}
+
+.calendar .today {
+    background-color: #fff4e6;
+    font-weight: bold;
+}
+
+.calendar .period-day {
+    border-bottom: 3px solid red;
+}
+
+.other-month {
+    color: #aaa;
+    background-color: #f9f9f9;
+}
+
+.day-number {
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+
+.prediction-info {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #ab7b8f;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.prediction-info h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+#current-cycle-status {
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+.bottom-navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #d76c82;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #ebe8db;
+    transition: all 0.3s ease;
+}
+  
+.nav-item.active {
+    color: #e4a9a9;
+}
+  
+.nav-item:hover {
+    color: #e4a9a9;
+}
+
+.nav-icon {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    margin-bottom: 0.2rem;
+}
+
+input:disabled {
+    background-color: #f9f9f9;
+    color: #333;
+    border: 1px solid #ddd;
+    cursor: not-allowed;
+}
+
+.bottom-navbar {
+    pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+    .full-text {
+        display: none;
+    }
+    
+    .short-text {
+        display: inline;
+    }
+    
+    .month-nav {
+        min-width: 4rem;
+        padding: 0.4rem;
+    }
+    
+    .calendar td {
+        height: clamp(2.5rem, 8vw, 4rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.6rem 0.8rem;
+    }
+    
+    .logo {
+        height: 1.8rem;
+    }
+    
+    .month-nav {
+        min-width: 3.5rem;
+        padding: 0.3rem;
+    }
+    
+    .calendar th, 
+    .calendar td {
+        padding: 0.2rem;
+    }
+    
+    .day-number {
+        font-size: 0.7rem;
+    }
+    
+    .nav-icon {
+        font-size: 0.9rem;
+    }
+}
