@@ -144,22 +144,43 @@ body {
 /* Buttons */
 .quote-button-container {
   margin-bottom: 1rem;
+  max-width: 300px;      /* Batasi lebar container tombol */
+  width: 90%;            /* Lebar fleksibel, responsif */
+  margin-left: auto;
+  margin-right: auto;    /* Center container */
+  box-sizing: border-box;
 }
+
 .go-quotes-btn {
-  background: #B03052; color: #fff;
+  background: #B03052;
+  color: #fff;
   border: none;
-  padding: .75rem 1.25rem;
+  padding: 0.75rem 1.25rem;
   border-radius: 8px;
   cursor: pointer;
-  transition: background .3s;
+  transition: background 0.3s;
+  width: 100%;           /* Lebar tombol sesuai container */
+  font-size: 1rem;       /* Ukuran font cukup besar untuk klik di HP */
+  box-sizing: border-box;
 }
+
 .go-quotes-btn:hover:not(:disabled) {
   background: #a02848;
 }
+
 .go-quotes-btn:disabled {
-  opacity: .6;
+  opacity: 0.6;
   cursor: default;
 }
+
+/* Media query untuk layar sangat kecil */
+@media (max-width: 320px) {
+  .go-quotes-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
 
 .bottom-navbar {
     position: fixed;
