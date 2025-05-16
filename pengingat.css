@@ -78,24 +78,50 @@ body {
 .mood-section {
   background: #fff4f4;
   margin: 1rem auto;
-  padding: 0.5rem;
+  padding: 1rem;                /* Tambah padding supaya lebih enak di layar kecil */
   border-radius: 12px;
-  max-width: 30%;
+  max-width: 90%;              /* Ubah max-width dari 30% ke 90% supaya di HP muat */
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-sizing: border-box;      /* Agar padding tidak membuat lebar bertambah */
 }
-.mood-section h2 { margin-bottom: .5rem; }
+
+/* Typography dan margin */
+.mood-section h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;           /* Sesuaikan font-size agar tetap proporsional */
+}
+
+/* Emoji */
 .mood-emojis {
-  font-size: 2rem;
-  margin: 0 .5rem;
+  font-size: 2.5rem;           /* Lebih besar supaya mudah tap di HP */
+  margin: 0 0.5rem;
   cursor: pointer;
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
-.mood-emojis:hover { transform: scale(1.2); }
+
+.mood-emojis:hover {
+  transform: scale(1.2);
+}
+
+/* Advice text */
 .mood-advice {
-  margin-top: .75rem;
+  margin-top: 0.75rem;
   font-style: italic;
   color: #444;
+  font-size: 1rem;             /* Sesuaikan ukuran font */
 }
+
+/* Media Query untuk layar besar */
+@media (min-width: 768px) {
+  .mood-section {
+    max-width: 30%;            /* Di layar desktop, tetap 30% */
+    padding: 0.5rem;
+  }
+  .mood-emojis {
+    font-size: 2rem;
+  }
+}
+
 
 /* Quotes */
 .quote-box {
