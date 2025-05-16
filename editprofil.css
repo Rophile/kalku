@@ -71,39 +71,60 @@ body {
     color: #c94e5c;
   }
   
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;           /* Lebar penuh container parent */
+  max-width: 400px;      /* Maksimal lebar biar ga terlalu besar di desktop */
+  margin: 0 auto;        /* Center form di layar lebar */
+  padding: 0 1rem;       /* Padding sisi biar ada jarak */
+  box-sizing: border-box;
+}
+
+label {
+  font-weight: bold;
+  margin: 6px 0 4px;
+  font-size: 14px;
+  color: #a14a5b;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"] {
+  background-color: #e891a5;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  font-size: 14px;       /* Tingkatkan font supaya lebih nyaman dibaca */
+  margin-bottom: 10px;
+  width: 100%;           /* Lebar input 100% container form */
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: #fff;
+}
+
+input:read-only {
+  background-color: #e891a5;
+  opacity: 0.9;
+}
+
+/* Optional: Responsive typography untuk layar sangat kecil */
+@media (max-width: 320px) {
   label {
-    font-weight: bold;
-    margin: 6px 0 4px;
-    font-size: 14px;
-    color: #a14a5b;
+    font-size: 12px;
   }
-  
   input[type="text"],
   input[type="password"],
   input[type="email"],
   input[type="date"] {
-    background-color: #e891a5;
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
-    color: white;
     font-size: 12px;
-    margin-bottom: 10px;
+    padding: 8px;
   }
-  
-  input::placeholder {
-    color: #fff;
-  }
-  
-  input:read-only {
-    background-color: #e891a5;
-    opacity: 0.9;
-  }
+}
   
 .password-wrapper {
   position: relative;
