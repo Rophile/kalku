@@ -9,28 +9,50 @@ body {
     padding: 1 rem;
 }
   
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0 1rem;           /* Padding horizontal responsif */
+  margin-bottom: 3rem;       /* Spasi bawah yang lebih fleksibel */
+  max-width: 100%;           /* Maks lebar sesuai layar */
+  box-sizing: border-box;
+}
+
+header i {
+  position: absolute;
+  left: 1rem;
+  font-size: 1.5rem;         /* Ukuran icon responsif */
+  color: #333;
+  cursor: pointer;
+  touch-action: manipulation; /* Supaya klik lebih responsif di HP */
+}
+
+header h2 {
+  margin: 0;
+  font-weight: bold;
+  font-size: clamp(1.2rem, 4vw, 1.5rem); /* Ukuran font dinamis */
+  color: #333;
+  text-align: center;
+}
+
+/* Media query untuk layar kecil */
+@media (max-width: 360px) {
   header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    margin-bottom: 50px;
+    margin-bottom: 2rem;
   }
-  
+
   header i {
-    position: absolute;
-    left: 0;
-    font-size: 20px;
-    color: #333;
-    cursor: pointer;
+    font-size: 1.2rem;
+    left: 0.5rem;
   }
 
   header h2 {
-    margin: 0;
-    font-weight: bold;
-    font-size: 20px;
-    color: #333;
+    font-size: 1.1rem;
   }
+}
+
   
   .back-btn {
     font-size: 25px;
