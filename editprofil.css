@@ -1,9 +1,13 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
 body {
     margin: 0;
-    font-family: 'Quicksand', sans-serif;
     background-color: #ebe8db;
     padding: 1 rem;
-  }
+}
   
   header {
     display: flex;
