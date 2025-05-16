@@ -21,7 +21,8 @@ header {
 }
 
 header i {
-  position: relative;
+  top: 10px;
+  position: absolute;
   left: 1rem;
   font-size: 1.5rem;         /* Ukuran icon responsif */
   color: #333;
@@ -30,6 +31,7 @@ header i {
 }
 
 header h2 {
+  margin-top: 10px;
   margin: 0;
   font-weight: bold;
   font-size: clamp(1.2rem, 4vw, 1.5rem); /* Ukuran font dinamis */
