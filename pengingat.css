@@ -185,7 +185,7 @@ body {
 .go-quotes-btn {
   background: #B03052;
   color: #fff;
-  border: none;
+  border: 1px solid black;  /* Garis tepi tipis 1px */
   padding: 0.75rem 1.25rem;
   border-radius: 8px;
   cursor: pointer;
