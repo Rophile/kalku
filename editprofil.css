@@ -15,7 +15,7 @@ header {
   justify-content: center;
   position: relative;
   padding: 0 2rem;           /* Padding horizontal responsif */
-  margin-bottom: 3rem;       /* Spasi bawah yang lebih fleksibel */
+  margin-bottom: 1.5rem;       /* Spasi bawah yang lebih fleksibel */
   max-width: 100%;           /* Maks lebar sesuai layar */
   box-sizing: border-box;
 }
@@ -46,13 +46,13 @@ header h2 {
   }
 
   header i {
-    top: 10px;
+    top: 20px;
     font-size: 1.2rem;
     left: 0.5rem;
   }
 
   header h2 {
-    margin-top: 10px;
+    top: 20px;
     font-size: 1.1rem;
   }
 }
