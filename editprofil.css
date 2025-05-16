@@ -14,7 +14,7 @@ header {
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 0 1rem;           /* Padding horizontal responsif */
+  padding: 0 2rem;           /* Padding horizontal responsif */
   margin-bottom: 3rem;       /* Spasi bawah yang lebih fleksibel */
   max-width: 100%;           /* Maks lebar sesuai layar */
   box-sizing: border-box;
