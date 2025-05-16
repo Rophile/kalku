@@ -126,20 +126,51 @@ body {
 /* Quotes */
 .quote-box {
   background: #ffe7dc;
-  margin: auto;                      /* Tengah horizontal */
-  margin-top: 20vh;  
+  margin: 20vh auto 0 auto;           /* Center horizontal & beri margin top */
   padding: 1.5rem;
   border-radius: 12px;
-  max-width: 30%;
+  max-width: 90%;                     /* Maks lebar 90% di layar kecil */
+  width: 400px;                      /* Lebar default, agar tidak terlalu lebar di desktop */
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   position: relative;
+  box-sizing: border-box;             /* Padding tidak menambah lebar */
 }
+
 .quote-icon {
-  position: absolute; top: .5rem; right: .75rem;
-  font-size: 1.5rem; color: #b03052;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  font-size: 1.5rem;
+  color: #b03052;
 }
-.quote-text { font-size: 1.1rem; margin-bottom: .75rem; color: #4a4a4a; }
-.quote-author { font-style: italic; color: #6a1b9a; }
+
+.quote-text {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: #4a4a4a;
+}
+
+.quote-author {
+  font-style: italic;
+  color: #6a1b9a;
+}
+
+/* Media query untuk layar kecil */
+@media (max-width: 480px) {
+  .quote-box {
+    width: 95%;
+    padding: 1rem;
+    margin-top: 10vh;
+  }
+  
+  .quote-text {
+    font-size: 1rem;
+  }
+  
+  .quote-icon {
+    font-size: 1.2rem;
+  }
+}
 
 /* Buttons */
 .quote-button-container {
