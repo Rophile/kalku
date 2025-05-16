@@ -21,7 +21,7 @@ header {
 }
 
 header i {
-  position: absolute;
+  position: relative;
   left: 1rem;
   font-size: 1.5rem;         /* Ukuran icon responsif */
   color: #333;
