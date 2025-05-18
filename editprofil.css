@@ -103,7 +103,7 @@ form {
   display: flex;
   flex-direction: column;
   width: 100%;           /* Lebar penuh container parent */
-  max-width: 600px;      /* Maksimal lebar biar ga terlalu besar di desktop */
+  max-width: 800px;      /* Maksimal lebar biar ga terlalu besar di desktop */
   margin: 0 auto;        /* Center form di layar lebar */
   padding: 0 1rem;       /* Padding sisi biar ada jarak */
   box-sizing: border-box;
