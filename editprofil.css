@@ -37,6 +37,12 @@ header h2 {
   text-align: center;
 }
 
+@media (min-width: 1024px) {
+  form {
+    max-width: 700px; /* lebih fleksibel di desktop/laptop besar */
+    padding: 0 2rem;
+  }
+}
 /* Media query untuk layar kecil */
 @media (max-width: 360px) {
   header {
