@@ -17,12 +17,10 @@ const periodInput = document.getElementById('period-length');
 const predictionText = document.getElementById('prediction-text');
 const formContainer = document.getElementById('form-container');
 
-document.addEventListener('DOMContentLoaded', function() {
-    const today = new Date();
-    const formattedDate = today.toISOString().split('T')[0];
-    document.getElementById('today-date').textContent = `Tanggal hari ini: ${formattedDate}`;
-});
-
+document.addEventListener('DOMContentLoaded', () => {
+  // default today
+  const today = new Date().toISOString().split('T')[0];
+  lastInput.value = today;
 
   // load from localStorage
   const saved = JSON.parse(localStorage.getItem('menstrualData') || 'null');
