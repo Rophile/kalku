@@ -67,7 +67,7 @@ function calculatePeriods() {
     let d = new Date(lastDate);
     d.setDate(d.getDate() + i*cycleLen);
     let days = [];
-    for (let j=0; j<periodLen-1; j++){
+    for (let j=0; j<periodLen; j++){
       let dd = new Date(d);
       dd.setDate(dd.getDate()+j);
       days.push(dd.toISOString().split('T')[0]);
